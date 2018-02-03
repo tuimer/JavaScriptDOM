@@ -5,8 +5,8 @@ function showPic(whichPic){
 }
 function countBodyChildren(){
 	var body_element=document.getElementsByTagName("body")[0];
-	alert(body_element.childNodes.length);
-}
-window.onload=countBodyChildren;
+	alert(body_element.nodeType);//节点的nodeType属性值：1——>元素节点
+}								 //						 2——>属性节点
+window.onload=countBodyChildren; //						 3——>文本节点
 	
 
