@@ -1,7 +1,10 @@
 function showPic(whichPic){
 	 var source=whichPic.getAttribute("href");
 	 var placeholder=document.getElementById("placeholder");
-	 placeholder.setAttribute("src",source); 
+	 placeholder.setAttribute("src",source); //设置图片变换
+	 var text=whichPic.getAttribute("title");//点击图片时，链接的title属性值提取并保留到text
+	 var description=document.getElementById("description");//id为description的<p>元素保留在description的变量里
+	 description.firstChild.nodeValue=text;//firstChild等价于childNodes[0]
 }
 function countBodyChildren(){
 	var body_element=document.getElementsByTagName("body")[0];
