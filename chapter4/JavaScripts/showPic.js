@@ -14,4 +14,16 @@ window.onload=countBodyChildren; //						 3——>文本节点
 function popUp(winURL){
 	window.open(winURL,"popup","width=320,height=480");
 }	
+window.onload=function(){
+	if(!document.getElementByTagName) return false;
+	var lnk=document.getElementByTagName("a");
+	for(var i=0;i<lnk.length;i++){
+		if(lnk[i].getAttribute("class")=="popup"){
+			lnk[i].onclick=function(){
+				popUp(this.getAttribute("href"));
+				return false;
+			}
+		}
+	}
+}
 
